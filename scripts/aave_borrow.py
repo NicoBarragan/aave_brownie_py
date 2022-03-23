@@ -41,7 +41,7 @@ def main():
     borrow_tx = lending_pool.borrow(
         dai_address, 
         Web3.toWei(amount_dai_to_borrow, "ether"), # Always in WEI when is a tx
-        rate_mode, # InterestRateMode: 1-> Stable, 2-> Variable
+        rate_mode, # InterestRateMode: 0: -> No debt (flash), 1-> Stable, 2-> Variable
         0, # Refferal code
         account.address, # OnBehalfOf 
         {"from": account} # For paying gas of transaction
